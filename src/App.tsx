@@ -15,6 +15,7 @@ export const App: React.FC = () => {
     setError(null);
     try {
       const data = await getAll();
+
       setGoods(data);
     } catch (err) {
       setError('Failed to load goods');
@@ -28,6 +29,7 @@ export const App: React.FC = () => {
     setError(null);
     try {
       const data = await get5First();
+
       setGoods(data);
     } catch {
       setError('Failed to load first 5 goods');
@@ -41,6 +43,7 @@ export const App: React.FC = () => {
     setError(null);
     try {
       const data = await getRedGoods();
+
       setGoods(data);
     } catch {
       setError('Failed to load red goods');
@@ -71,7 +74,6 @@ export const App: React.FC = () => {
 
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
-
 
       <GoodsList goods={goods} />
     </div>
